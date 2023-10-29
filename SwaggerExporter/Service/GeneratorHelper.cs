@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Reflection;
 
-namespace SwaggerExporter.Service
+namespace PostmanExporter.Service
 {
     public class GeneratorHelper
     {

@@ -1,4 +1,4 @@
-﻿namespace SwaggerExporter.Models
+﻿namespace PostmanExporter.Models
 {
     public class FileModel
     {

@@ -1,13 +1,13 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
-using SwaggerExporter.Models;
+using PostmanExporter.Models;
 using System.Reflection;
 
-namespace SwaggerExporter.Service
+namespace PostmanExporter.Service
 {
-    public static class SwaggerExporterServiceExtensions
+    public static class PostmanExporterServiceExtensions
     {
-        public static IServiceCollection AddSwaggerExporter(this IServiceCollection services, Assembly[] Assemblies)
+        public static IServiceCollection AddPostmanExporter(this IServiceCollection services, Assembly[] Assemblies)
         {
             var types = Assemblies.SelectMany(a => a.GetTypes()).ToArray();
             var controllers = GeneratorHelper.GetControllers(types);
