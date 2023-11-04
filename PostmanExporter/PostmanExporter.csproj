@@ -4,7 +4,29 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>postman-exporter-api</PackageId>
+    <Title>Controller to Postman Collection Exporter</Title>
+    <Version>0.0.1</Version>
+    <Authors>theufonseca</Authors>
+    <Company>theufonseca</Company>
+    <Description>Add "AddPostmanExporter" with AppDomain.CurrentDomain.GetAssemblies() as parameter.
+
+A "PostmanExporter" controller as a Get will be created. This action will download all of your controller as a postman Collection.
+
+After this you can upload this file to postman to have all http calls setuped.</Description>
+    <PackageIcon>postman-icon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/theufonseca/postman-exporter</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>.net;postman;exporter;api;swagger</PackageTags>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\joaom\OneDrive\Área de Trabalho\postman-icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />

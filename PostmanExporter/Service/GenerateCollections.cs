@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using PostmanExporter.Models;
 using System.Reflection;
@@ -42,31 +43,9 @@ namespace PostmanExporter.Service
                 }
             }
 
-            SaveFile(rootObject, services);
+            services.AddSingleton(rootObject);
 
             return services;
-        }
-
-        private static void SaveFile(RootObject rootObject, IServiceCollection services)
-        {
-            var json = JsonConvert.SerializeObject(rootObject, Formatting.Indented);
-
-            using (MemoryStream ms = new MemoryStream())
-            {
-                StreamWriter writer = new StreamWriter(ms);
-                writer.Write(json);
-                writer.Flush();
-                ms.Seek(0, SeekOrigin.Begin);
-
-                var fileModel = new FileModel
-                {
-                    Stream = new MemoryStream()
-                };
-
-                ms.CopyTo(fileModel.Stream);
-
-                services.AddSingleton(fileModel);
-            }
         }
     }
 }
